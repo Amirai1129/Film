@@ -562,7 +562,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "earn":
         buttons = [[
-            InlineKeyboardButton('‼️ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ sʜᴏʀᴛɴᴇʀ ‼️', callback_data='howshort')
+            InlineKeyboardButton('کانال ما در تلگرام @MyFilmia', callback_data='howshort')
         ],[
             InlineKeyboardButton('≼ ʙᴀᴄᴋ', callback_data='start')
         ]]
