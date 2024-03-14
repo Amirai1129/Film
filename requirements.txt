@@ -1,0 +1,14 @@
+pyrofork
+tgcrypto
+motor
+marshmallow
+umongo
+pymongo
+pytz
+cinemagoer
+shortzy
+aiohttp
+aiofiles
+telegraph
+openai
+speedtest-cli
