@@ -119,7 +119,7 @@ async def start(client, message):
             reply_markup = InlineKeyboardMarkup(btn)
             await message.reply_photo(
                 photo=random.choice(PICS),
-                caption=f"👋 سلام {message.from_user.mention},\n\nلطفا در کانال های زیر عضو شوید و دوباره تلاش کنید",
+                caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and try again. 😇",
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
