@@ -84,6 +84,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://filmia.org')
 OWNER_USERNAME = environ.get("OWNER_USERNAME", "https://t.me/MyFilmia")
 UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/MyFilmia')
+FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/HA_Films_World')
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/myfilmia")
 VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/Myfilmia")
 
