@@ -140,7 +140,7 @@ async def start(client, message):
             )   
             if settings.get('is_stream', IS_STREAM):
                 btn = [[
-                    InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file.file_id}")
+                    InlineKeyboardButton("دانلود با لینک مستقیم", callback_data=f"stream#{file.file_id}")
                 ],[
                     InlineKeyboardButton('️کانال فیلمیا', url=UPDATES_LINK),
                     InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
@@ -194,19 +194,19 @@ async def start(client, message):
     )
     if settings.get('is_stream', IS_STREAM):
         btn = [[
-            InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file_id}")
+            InlineKeyboardButton("دانلود با لینک مستقیم", callback_data=f"stream#{file_id}")
         ],[
             InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
             InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ],[
-            InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+            InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
         ]]
     else:
         btn = [[
             InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
             InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ],[
-            InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+            InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
         ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
