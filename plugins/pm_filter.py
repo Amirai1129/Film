@@ -473,7 +473,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         settings = await get_settings(int(mc.split("_", 2)[1]))
         btn = await is_subscribed(client, query, settings['fsub'])
         if btn:
-            await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and try again.", show_alert=True)
+            await query.answer(f"سلام {query.from_user.first_name},\nجهت استفاده از ربات باید در کانال زیر عضو شوید.", show_alert=True)
             btn.append(
                 [InlineKeyboardButton("🔁 Try Again 🔁", callback_data=f"checksub#{mc}")]
             )
@@ -501,18 +501,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         await query.answer('Welcome!')
         buttons = [[
-            InlineKeyboardButton("+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +", url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+            InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
-            InlineKeyboardButton('🔎 sᴇᴀʀᴄʜ ɪɴʟɪɴᴇ 🔍', switch_inline_query_current_chat='')
+            InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
+            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ],[
-            InlineKeyboardButton('⚡️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ⚡️', url=UPDATES_LINK),
-            InlineKeyboardButton('💡 Support Group 💡', url=SUPPORT_LINK)
-        ],[
-            InlineKeyboardButton('👨‍🚒 ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('📚 ᴀʙᴏᴜᴛ', callback_data='my_about'),
-            InlineKeyboardButton('👤 ᴏᴡɴᴇʀ', callback_data='my_owner')
-        ],[
-            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ʙʏ ʙᴏᴛ 💰', callback_data='earn')
+            InlineKeyboardButton('اپلیکیشن اندروید فیلمیا', callback_data='earn')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
