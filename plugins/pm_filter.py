@@ -497,8 +497,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         await query.answer('Welcome!')
         buttons = [[
-            InlineKeyboardButton('جستجوی پیشرفته فیلم و سریال', url=https://t.me/+FDW_XKQdJ5AxZGRi)
-        ],[
             InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
             InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
