@@ -46,8 +46,6 @@ async def start(client, message):
     
     if (len(message.command) != 2) or (len(message.command) == 2 and message.command[1] == 'start'):
         buttons = [[
-            InlineKeyboardButton('جستجوی پیشرفته فیلم و سریال', url=https://t.me/+FDW_XKQdJ5AxZGRi)
-        ],[
             InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
             InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
@@ -142,8 +140,6 @@ async def start(client, message):
             )   
             if settings.get('is_stream', IS_STREAM):
                 btn = [[
-                    InlineKeyboardButton("دانلود با لینک مستقیم", callback_data=f"stream#{file.file_id}")
-                ],[
                     InlineKeyboardButton('️کانال فیلمیا', url=UPDATES_LINK),
                     InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
                 ],[
