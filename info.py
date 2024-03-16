@@ -85,7 +85,7 @@ SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://filmia.org')
 OWNER_USERNAME = environ.get("OWNER_USERNAME", "https://t.me/MyFilmia")
 UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/MyFilmia')
 GP_LINK = environ.get('GP_LINK', 'https://t.me/+FDW_XKQdJ5AxZGRi')
-FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/HA_Films_World')
+FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/filmgirgp')
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/myfilmia")
 VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/Myfilmia")
 
