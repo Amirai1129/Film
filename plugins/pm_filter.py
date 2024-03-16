@@ -145,9 +145,9 @@ async def pm_search(client, message):
     files, n_offset, total = await get_search_results(message.text)
     if int(total) != 0:
         btn = [[
-            InlineKeyboardButton("Here", url=FILMS_LINK)
+            InlineKeyboardButton("جستجو - کلیک کنید", url=FILMS_LINK)
         ]]
-        await message.reply_text(f'Total {total} results found in this group', reply_markup=InlineKeyboardMarkup(btn))
+        await message.reply_text(f'جهت جستجوی فیلم و سریال روی لینک زیر کلیک کنید', reply_markup=InlineKeyboardMarkup(btn))
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
