@@ -1,7 +1,7 @@
 class script(object):
     START_TXT = """<b>سلام {}, <i>{}</i>
     
-🎬 جهت جستجوی فیلم ، سریال ، انیمه مورد نظر از دکمه های زیر روی گزینه ( جستجو ) کلیک کنید
+🎬 <a href=https://t.me/filmgirgp>جهت جستجو و دریافت فیلم و سریال اینجا کلیک کنید</a>
 
 ✅ کانال رسمی ما در تلگرام 
 @MyFilmia</b>"""
@@ -49,9 +49,7 @@ Total - <code>{}</code>"""
 
 فیلم،سریال،انیمه <b>{}</b> در ربات یافت نشد! 🥲
 
-👉 Google Search and check your spelling is correct.
-👉 Please read the Instructions to get better results.
-👉 Or not been released yet."""
+👉 آیا نام سریال/فیلم را به درستی وارد کرده اید؟"""
     
     EARN_TXT = """<b>🍿 اپلیکیشن اندروید فیلمیا
 
@@ -117,16 +115,17 @@ Total - <code>{}</code>"""
 	3	سپس "Privacy" را انتخاب کنید. 
 	4	گزینه "Unknown sources" را پیدا کنید و آن را فعال کنید.</b>"""
 
-    IMDB_TEMPLATE = """: <code>{query}</code>
+    IMDB_TEMPLATE = """🎥: <code>{query}</code>
 
-🏷 عنوان: <a href={url}>{title}</a>
-🎭 ژانر: {genres}
-📆 سال انتشار: <a href={url}/releaseinfo>{year}</a>
-🌟 امتیاز: <a href={url}/ratings>{rating} / 10</a>
-☀️ زبان: {languages}
-📀 مدت زمان: {runtime} Minutes
+🏷 عنوان : <a href={url}>{title}</a>
+🎭 ژانر : {genres}
+📆 سال انتشار : <a href={url}/releaseinfo>{year}</a>
+🌟 امتیاز : <a href={url}/ratings>{rating} / 10</a>
+☀️ زبان : {languages}
+📀 مدت زمان : {runtime} Minutes
 
 🗣 درخواست توسط: {message.from_user.mention}
+©️ آدرس وبسایت فیلمیا: <b>Filmia.org</b>
 ©️ کانال دانلود فیلم و سریال: <b>@MyFilmia</b>"""
 
     FILE_CAPTION = """<i>{file_name}</i>
