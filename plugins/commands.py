@@ -33,7 +33,7 @@ async def start(client, message):
             InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
             InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ]]
-        await message.reply(text=f"<b>ʜᴇʏ {message.from_user.mention}, <i>{wish}</i>\nʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ??</b>", reply_markup=InlineKeyboardMarkup(btn))
+        await message.reply(text=f"<b>نام فیلم/سریال موردنظر را انگلیسی اینجا ارسال کنید", reply_markup=InlineKeyboardMarkup(btn))
         return 
         
     if not await db.is_user_exist(message.from_user.id):
