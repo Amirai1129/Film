@@ -37,7 +37,7 @@ async def give_filter(client, message):
                     await client.restrict_chat_member(chatid, message.from_user.id, ChatPermissions(can_send_messages=False))
                     await message.reply_photo(
                         photo=random.choice(PICS),
-                        caption=f"👋 Hello {message.from_user.mention},\n\nPlease join and try again. 😇",
+                        caption=f"👋 سلام {message.from_user.mention},\n\nدر کانال های زیر عضو شوید و دوباره امتحان کنید. 😇",
                         reply_markup=reply_markup,
                         parse_mode=enums.ParseMode.HTML
                     )
@@ -153,7 +153,7 @@ async def pm_search(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+        return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -174,7 +174,7 @@ async def next_page(bot, query):
         return
     temp.FILES[key] = files
     settings = await get_settings(query.message.chat.id)
-    del_msg = f"\n\n<b>⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ <code>{get_readable_time(DELETE_TIME)}</code> ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs</b>" if settings["auto_delete"] else ''
+    del_msg = f"\n\n<b>⚠️ این پیام تا <code>{get_readable_time(DELETE_TIME)}</code> ساعت دیگر حذف خواهد شد</b>" if settings["auto_delete"] else ''
     files_link = ''
 
     if settings['links']:
@@ -205,23 +205,23 @@ async def next_page(bot, query):
         
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton("« بازگشت", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"{math.ceil(int(offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"{math.ceil(int(offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons"),
-             InlineKeyboardButton("ɴᴇxᴛ »", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("صفحه بعد", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("« بازگشت", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"{math.ceil(int(offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons"),
-                InlineKeyboardButton("ɴᴇxᴛ »", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("صفحه بعد", callback_data=f"next_{req}_{key}_{n_offset}")
             ]
         )
     btn.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🚫 بستن 🚫", callback_data="close_data")]
     )
     try:
         await query.message.edit_text(cap + files_link + del_msg, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -232,7 +232,7 @@ async def next_page(bot, query):
 async def languages_cb_handler(client: Client, query: CallbackQuery):
     _, key, req, offset = query.data.split("#")
     if int(req) != query.from_user.id:
-        return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+        return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
     btn = [[
         InlineKeyboardButton(text=lang.title(), callback_data=f"lang_search#{lang}#{key}#{offset}#{req}"),
     ]
@@ -245,7 +245,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
 async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     _, lang, key, offset, req = query.data.split("#")
     if int(req) != query.from_user.id:
-        return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+        return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
 
     search = BUTTONS.get(key)
     cap = CAP.get(key)
@@ -259,7 +259,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         return
     temp.FILES[key] = files
     settings = await get_settings(query.message.chat.id)
-    del_msg = f"\n\n<b>⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ <code>{get_readable_time(DELETE_TIME)}</code> ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs</b>" if settings["auto_delete"] else ''
+    del_msg = f"\n\n<b>⚠️ این پیام تا <code>{get_readable_time(DELETE_TIME)}</code> ساعت دیگر حذف خواهد شد</b>" if settings["auto_delete"] else ''
     files_link = ''
 
     if settings['links']:
@@ -290,7 +290,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🚸 ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇs 🚸", callback_data="buttons")]
+            [InlineKeyboardButton(text="🚸 صفحه دیگری نیست 🚸", callback_data="buttons")]
         )
     btn.append([InlineKeyboardButton(text="⪻ ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴘᴀɢᴇ", callback_data=f"next_{req}_{key}_{offset}")])
     await query.message.edit_text(cap + files_link + del_msg, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
@@ -299,7 +299,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
 async def lang_next_page(bot, query):
     ident, req, key, lang, l_offset, offset = query.data.split("#")
     if int(req) != query.from_user.id:
-        return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+        return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
 
     try:
         l_offset = int(l_offset)
@@ -309,7 +309,7 @@ async def lang_next_page(bot, query):
     search = BUTTONS.get(key)
     cap = CAP.get(key)
     settings = await get_settings(query.message.chat.id)
-    del_msg = f"\n\n<b>⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ <code>{get_readable_time(DELETE_TIME)}</code> ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs</b>" if settings["auto_delete"] else ''
+    del_msg = f"\n\n<b>⚠️ این پیام تا <code>{get_readable_time(DELETE_TIME)}</code> ساعت دیگر حذف خواهد شد</b>" if settings["auto_delete"] else ''
     if not search:
         await query.answer(f"Hello {query.from_user.first_name},\nSend New Request Again!", show_alert=True)
         return 
@@ -355,28 +355,28 @@ async def lang_next_page(bot, query):
 
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
+            [InlineKeyboardButton("بازگشت", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
              InlineKeyboardButton(f"{math.ceil(int(l_offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons")]
         )
     elif b_offset is None:
         btn.append(
             [InlineKeyboardButton(f"{math.ceil(int(l_offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons"),
-             InlineKeyboardButton("ɴᴇxᴛ »", callback_data=f"lang_next#{req}#{key}#{lang}#{n_offset}#{offset}")]
+             InlineKeyboardButton("صفحه بعدی", callback_data=f"lang_next#{req}#{key}#{lang}#{n_offset}#{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
+            [InlineKeyboardButton("بازگشت", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
              InlineKeyboardButton(f"{math.ceil(int(l_offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons"),
-             InlineKeyboardButton("ɴᴇxᴛ »", callback_data=f"lang_next#{req}#{key}#{lang}#{n_offset}#{offset}")]
+             InlineKeyboardButton("صفحه بعدی", callback_data=f"lang_next#{req}#{key}#{lang}#{n_offset}#{offset}")]
         )
-    btn.append([InlineKeyboardButton(text="⪻ ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴘᴀɢᴇ", callback_data=f"next_{req}_{key}_{offset}")])
+    btn.append([InlineKeyboardButton(text="بازگشت به صفحه اصلی", callback_data=f"next_{req}_{key}_{offset}")])
     await query.message.edit_text(cap + files_link + del_msg, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
     _, id, user = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+        return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
 
     movie = await get_poster(id, id=True)
     search = movie.get('title')
@@ -387,7 +387,7 @@ async def advantage_spoll_choker(bot, query):
         await auto_filter(bot, query, k)
     else:
         await bot.send_message(LOG_CHANNEL, script.NO_RESULT_TXT.format(query.message.chat.title, query.message.chat.id, query.from_user.mention, search))
-        k = await query.message.edit(f"👋 Hello {query.from_user.mention},\n\nI don't find <b>'{search}'</b> in my database. 😔")
+        k = await query.message.edit(f"سلام {query.from_user.mention},\n\nفیلم/سریال <b>'{search}'</b> در ربات موجود نیست. 😔")
         await asyncio.sleep(60)
         await k.delete()
         try:
@@ -403,7 +403,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except:
             user = query.from_user.id
         if int(user) != 0 and query.from_user.id != int(user):
-            return await query.answer(f"Hello {query.from_user.first_name},\nThis Is Not For You!", show_alert=True)
+            return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
         await query.answer("Closed!")
         await query.message.delete()
         try:
@@ -415,7 +415,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ident, file_id = query.data.split("#")
         user = query.message.reply_to_message.from_user.id
         if int(user) != 0 and query.from_user.id != int(user):
-            return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+            return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
         await query.answer(url=f"https://t.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file_id}")
 
     elif query.data.startswith("stream"):
@@ -469,9 +469,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         settings = await get_settings(int(mc.split("_", 2)[1]))
         btn = await is_subscribed(client, query, settings['fsub'])
         if btn:
-            await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and try again.", show_alert=True)
+            await query.answer(f"👋 سلام {message.from_user.mention},\n\nدر کانال های زیر عضو شوید و دوباره امتحان کنید. 😇", show_alert=True)
             btn.append(
-                [InlineKeyboardButton("🔁 Try Again 🔁", callback_data=f"checksub#{mc}")]
+                [InlineKeyboardButton("🔁 تلاش دوباره 🔁", callback_data=f"checksub#{mc}")]
             )
             await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
             return
@@ -699,7 +699,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ident, key = query.data.split("#")
         user = query.message.reply_to_message.from_user.id
         if int(user) != 0 and query.from_user.id != int(user):
-            return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
+            return await query.answer(f"این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
         
         files = temp.FILES.get(key)
         if not files:
@@ -710,7 +710,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "unmute_all_members":
         if not await is_check_admin(client, query.message.chat.id, query.from_user.id):
-            await query.answer("This Is Not For You!", show_alert=True)
+            await query.answer("این فیلم توسط فرد دیگری درخواست داده شده است", show_alert=True)
             return
         users_id = []
         await query.message.edit("Unmute all started! This process maybe get some time...")
@@ -846,7 +846,7 @@ async def auto_filter(client, msg, spoll=False):
 
         btn.append(
             [InlineKeyboardButton(text=f"1/{math.ceil(int(total_results) / MAX_BTN)}", callback_data="buttons"),
-             InlineKeyboardButton(text="ɴᴇxᴛ »", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="صفحه بعدی", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         if settings['shortlink']:
@@ -898,9 +898,9 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>💭 ʜᴇʏ {message.from_user.mention},\n♻️ ʜᴇʀᴇ ɪ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ sᴇᴀʀᴄʜ {search}...</b>"
+        cap = f"<b>💭 سلام {message.from_user.mention},\n♻️ نتایج جستجوی شما {search}...</b>"
     CAP[key] = cap
-    del_msg = f"\n\n<b>⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ <code>{get_readable_time(DELETE_TIME)}</code> ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs</b>" if settings["auto_delete"] else ''
+    del_msg = f"\n\n<b>⚠️ این پیام تا <code>{get_readable_time(DELETE_TIME)}</code> ساعت دیگر حذف خواهد شد</b>" if settings["auto_delete"] else ''
     if imdb and imdb.get('poster'):
         try:
             if settings["auto_delete"]:
@@ -987,9 +987,9 @@ async def advantage_spell_chok(message):
         for movie in movies
     ]
     buttons.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🚫 بستن 🚫", callback_data="close_data")]
     )
-    s = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 Hello {message.from_user.mention},\n\nI couldn't find the <b>'{search}'</b> you requested.\nSelect if you meant one of these? 👇", reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
+    s = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 سلام {message.from_user.mention},\n\nفیلم <b>'{search}'</b> اشتباه وارد شده است.\nآیا منظورتون یکی از موارد زیر است? 👇", reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
     await asyncio.sleep(300)
     await s.delete()
     try:
