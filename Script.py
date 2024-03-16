@@ -113,7 +113,7 @@ Total - <code>{}</code>"""
 	1	به بخش تنظیمات دستگاه مراجعه کنید.
 	2	به پایین بروید و روی "Additional settings" ضربه بزنید.
 	3	سپس "Privacy" را انتخاب کنید. 
-	4	گزینه "Unknown sources" را پیدا کنید و آن را فعال کنید.</b>"""
+	4	گزینه "Unknown sources"را پیدا کنید و آن را فعال کنید.</b>"""
 
     IMDB_TEMPLATE = """🎥: <code>{query}</code>
 
