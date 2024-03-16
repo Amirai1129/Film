@@ -77,9 +77,9 @@ async def give_filter(client, message):
             files, offset, total = await get_search_results(message.text)
             if files:
                 btn = [[
-                    InlineKeyboardButton("Here", url=FILMS_LINK)
+                    InlineKeyboardButton("ورود به گروه", url=FILMS_LINK)
                 ]]
-                await message.reply_text(f'Total {total} results found in this group', reply_markup=InlineKeyboardMarkup(btn))
+                await message.reply_text(f'وارد گروه زیر شوید و فیلم/سریال موردنظر را جستجو کنید', reply_markup=InlineKeyboardMarkup(btn))
             return
             
         if message.text.startswith("/"):
