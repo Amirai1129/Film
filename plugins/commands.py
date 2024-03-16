@@ -46,7 +46,7 @@ async def start(client, message):
     
     if (len(message.command) != 2) or (len(message.command) == 2 and message.command[1] == 'start'):
         buttons = [[
-            InlineKeyboardButton("دریافت پیشرفته فیلم و سریال", url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+            InlineKeyboardButton("دریافت پیشرفته فیلم و سریال", url=f'https://t.me/filmgirgp')
         ],[
             InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
