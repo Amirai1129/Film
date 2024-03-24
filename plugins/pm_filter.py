@@ -501,8 +501,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
-            InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
-            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+            InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK)
         ],[
             InlineKeyboardButton('⁉️ آموزش استفاده از ربات', callback_data='earn')
         ]]
