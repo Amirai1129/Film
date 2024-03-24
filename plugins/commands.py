@@ -33,25 +33,7 @@ async def start(client, message):
             InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
             InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ]]
-        await message.reply(text=f"🔴 جهت جست و جوی فیلم در گروه نام فیلم به همراه سال ساخت را به صورت انگلیسی ارسال کنید
-برای مثال :
-The Nun 2018
-همچنین برای دوبله فارسی عبارت زیر را وارد کنید
-برای مثال :
-The Nun 2018 Duble Dubbed
-
-🔴 جهت جست و جوی سریال/انیمه در گروه نام سریال را به صورت انگلیسی ارسال کنید
-برای مثال :
-Shogun S01E01
-
-(S01 به معنی فصل اول)
-(E01 به معنی قسمت اول اول)
-همچنین برای دوبله فارسی عبارت زیر را وارد کنید
-برای مثال :
-Shogun S01E01 Duble Dubbed
-
-(S01 به معنی فصل اول)
-(E01 به معنی قسمت اول اول)", reply_markup=InlineKeyboardMarkup(btn))
+        await message.reply(text=f"<b>نام فیلم/سریال موردنظر را به صورت انگلیسی در گروه ارسال کنید", reply_markup=InlineKeyboardMarkup(btn))
         return 
         
     if not await db.is_user_exist(message.from_user.id):
@@ -68,7 +50,8 @@ Shogun S01E01 Duble Dubbed
         ],[
             InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
-            InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK)
+            InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
+            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ],[
             InlineKeyboardButton('⁉️ آموزش استفاده از ربات', callback_data='earn')
         ]]
