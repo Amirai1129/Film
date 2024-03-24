@@ -492,7 +492,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("⚠️")
 
     elif query.data == "instructions":
-        await query.answer("Movie request format.\nExample:\nBlack Adam or Black Adam 2022\n\nTV Reries request format.\nExample:\nLoki S01E01 or Loki S01 E01\n\nDon't use symbols.", show_alert=True)
+        await query.answer("🍿 آموزش استفاده از ربات فیلم و سریال فیلمیا\n\n1- جهت جست و جوی فیلم در گروه نام فیلم به همراه سال ساخت را به صورت انگلیسی ارسال کنید\nبرای مثال :\nThe Nun 2018\nهمچنین برای دوبله فارسی عبارت زیر را وارد کنید\nبرای مثال :\nThe Nun 2018 Duble Dubbed\n- جهت جست و جوی سریال/انیمه در گروه نام سریال را به صورت انگلیسی ارسال کنید\nبرای مثال :\nShogun S01E01\n(S01 به معنی فصل اول)\n(E01 به معنی قسمت اول اول)\nهمچنین برای دوبله فارسی عبارت زیر را وارد کنید\nبرای مثال :\nShogun S01E01 Duble Dubbed\n(S01 به معنی فصل اول)\n(E01 به معنی قسمت اول اول)", show_alert=True)
 
     elif query.data == "start":
         await query.answer('Welcome!')
@@ -956,8 +956,7 @@ async def advantage_spell_chok(message):
     search = message.text
     google_search = search.replace(" ", "+")
     btn = [[
-        InlineKeyboardButton("⚠️ Instructions ⚠️", callback_data='instructions'),
-        InlineKeyboardButton("🔎 Search Google 🔍", url=f"https://www.google.com/search?q={google_search}")
+        InlineKeyboardButton("⚠️ آموزش استفاده از ربات ⚠️", callback_data='instructions')
     ]]
     try:
         movies = await get_poster(search, bulk=True)
