@@ -229,11 +229,11 @@ def get_wish():
     time = datetime.now(tz)
     now = time.strftime("%H")
     if now < "12":
-        status = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞"
+        status = "به ربات فیلمیا خوش اومدی"
     elif now < "18":
-        status = "ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ 🌗"
+        status = "به ربات فیلمیا خوش اومدی"
     else:
-        status = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
+        status = "به ربات فیلمیا خوش اومدی"
     return status
     
 async def get_seconds(time_string):
