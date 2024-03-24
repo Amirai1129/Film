@@ -504,7 +504,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
             InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
         ],[
-            InlineKeyboardButton('اپلیکیشن اندروید فیلمیا', callback_data='earn')
+            InlineKeyboardButton('⁉️ آموزش استفاده از ربات ا', callback_data='earn')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
