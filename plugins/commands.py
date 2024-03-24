@@ -67,7 +67,7 @@ async def start(client, message):
     if len(message.command) == 2 and message.command[1] == "plans":
         btn = [            
             [InlineKeyboardButton("ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ 🧾", url=OWNER_USERNAME)],
-            [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
+            [InlineKeyboardButton("⚠️ بستن / حذف ⚠️", callback_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
@@ -145,14 +145,14 @@ async def start(client, message):
                     InlineKeyboardButton('️کانال فیلمیا', url=UPDATES_LINK),
                     InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
                 ],[
-                    InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                    InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
                 ]]
             else:
                 btn = [[
                     InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
                     InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
                 ],[
-                    InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                    InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
                 ]]
             await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -291,7 +291,7 @@ async def settings(client, message):
             InlineKeyboardButton('Stream', callback_data=f'setgs#is_stream#{settings.get("is_stream", IS_STREAM)}#{str(grp_id)}'),
             InlineKeyboardButton('✅ On' if settings.get("is_stream", IS_STREAM) else '❌ Off', callback_data=f'setgs#is_stream#{settings.get("is_stream", IS_STREAM)}#{str(grp_id)}')
         ],[
-            InlineKeyboardButton('❌ Close ❌', callback_data='close_data')
+            InlineKeyboardButton('❌ بستن ❌', callback_data='close_data')
         ]]
         await message.reply_text(
             text=f"Change your settings for <b>'{message.chat.title}'</b> as your wish. ⚙",
@@ -392,7 +392,7 @@ Tutorial Link: {settings['tutorial']}
 Force Channels: {str(settings['fsub'])[1:-1] if settings['fsub'] else 'Not Set'}"""
 
     btn = [[
-        InlineKeyboardButton(text="Close", callback_data="close_data")
+        InlineKeyboardButton(text="بستن", callback_data="close_data")
     ]]
     await message.reply_text(text, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
 
@@ -430,9 +430,9 @@ async def delete_file(bot, message):
     if int(total) == 0:
         return await msg.edit('Not have files in your query')
     btn = [[
-        InlineKeyboardButton("YES", callback_data=f"delete_{query}")
+        InlineKeyboardButton("بله", callback_data=f"delete_{query}")
     ],[
-        InlineKeyboardButton("CLOSE", callback_data="close_data")
+        InlineKeyboardButton("بستن", callback_data="close_data")
     ]]
     await msg.edit(f"Total {total} files found in your query {query}.\n\nDo you want to delete?", reply_markup=InlineKeyboardMarkup(btn))
  
@@ -443,9 +443,9 @@ async def delete_all_index(bot, message):
         await message.delete()
         return
     btn = [[
-        InlineKeyboardButton(text="YES", callback_data="delete_all")
+        InlineKeyboardButton(text="بله", callback_data="delete_all")
     ],[
-        InlineKeyboardButton(text="CLOSE", callback_data="close_data")
+        InlineKeyboardButton(text="بستن", callback_data="close_data")
     ]]
     files = await Media.count_documents()
     if int(files) == 0:
@@ -593,7 +593,7 @@ async def remove_premium_cmd_handler(client, message):
 async def plans_cmd_handler(client, message):                
     btn = [            
         [InlineKeyboardButton("ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ 🧾", url=OWNER_USERNAME)],
-        [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
+        [InlineKeyboardButton("⚠️ بستن / حذف ⚠️", callback_data="close_data")]
     ]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
@@ -613,7 +613,7 @@ async def check_plans_cmd(client, message):
         btn = [ 
             [InlineKeyboardButton("ɢᴇᴛ ғʀᴇᴇ ᴛʀᴀɪʟ ғᴏʀ 𝟻 ᴍɪɴᴜᴛᴇꜱ ☺️", callback_data="get_trail")],
             [InlineKeyboardButton("ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs", callback_data="buy_premium")],
-            [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
+            [InlineKeyboardButton("⚠️ بستن / حذف ⚠️", callback_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         m=await message.reply_sticker("CAACAgIAAxkBAAIBTGVjQbHuhOiboQsDm35brLGyLQ28AAJ-GgACglXYSXgCrotQHjibHgQ")         
