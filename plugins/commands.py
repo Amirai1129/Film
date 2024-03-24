@@ -31,7 +31,7 @@ async def start(client, message):
         wish = get_wish()
         btn = [[
             InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
-            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+            InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
         ]]
         await message.reply(text=f"<b>نام فیلم/سریال موردنظر را به صورت انگلیسی در گروه ارسال کنید", reply_markup=InlineKeyboardMarkup(btn))
         return 
@@ -51,7 +51,7 @@ async def start(client, message):
             InlineKeyboardButton('🔎 جستجوی فیلم و سریال 🔍', switch_inline_query_current_chat='')
         ],[
             InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
-            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+            InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
         ],[
             InlineKeyboardButton('⁉️ آموزش استفاده از ربات', callback_data='earn')
         ]]
@@ -143,14 +143,14 @@ async def start(client, message):
             if settings.get('is_stream', IS_STREAM):
                 btn = [[
                     InlineKeyboardButton('️کانال فیلمیا', url=UPDATES_LINK),
-                    InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+                    InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
                 ],[
                     InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
                 ]]
             else:
                 btn = [[
                     InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
-                    InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+                    InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
                 ],[
                     InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
                 ]]
@@ -197,14 +197,14 @@ async def start(client, message):
             InlineKeyboardButton("دانلود با لینک مستقیم", callback_data=f"stream#{file_id}")
         ],[
             InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
-            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+            InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
         ],[
             InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
         ]]
     else:
         btn = [[
             InlineKeyboardButton('کانال فیلمیا️', url=UPDATES_LINK),
-            InlineKeyboardButton('وبسایت فیلمیا', url=SUPPORT_LINK)
+            InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
         ],[
             InlineKeyboardButton('⁉️ بستن ⁉️', callback_data='close_data')
         ]]
