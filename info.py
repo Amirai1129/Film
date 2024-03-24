@@ -81,7 +81,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 # Links
-SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://filmia.org')
+SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/filmgirrobot?start=start')
 OWNER_USERNAME = environ.get("OWNER_USERNAME", "https://t.me/MyFilmia")
 UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/MyFilmia')
 GP_LINK = environ.get('GP_LINK', 'https://t.me/+FDW_XKQdJ5AxZGRi')
