@@ -990,7 +990,7 @@ async def advantage_spell_chok(message):
     buttons.append(
         [InlineKeyboardButton("🚫 بستن 🚫", callback_data="close_data")]
     )
-    s = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 سلام {message.from_user.mention},\n\nفیلم <b>'{search}'</b> اشتباه وارد شده است.\nآیا منظورتون یکی از موارد زیر است? 👇", reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
+    s = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 سلام {message.from_user.mention},\n\nفیلم <b>'{search}'</b> اشتباه وارد شده است.\n🔴 نام فیلم/سریال را باید به صورت انگلیسی ارسال کنید\nآیا منظورتون یکی از موارد زیر است? 👇", reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
     await asyncio.sleep(300)
     await s.delete()
     try:
