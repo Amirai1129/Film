@@ -33,7 +33,7 @@ async def start(client, message):
             InlineKeyboardButton('کانال فیلمیا', url=UPDATES_LINK),
             InlineKeyboardButton('ربات فیلمیا', url=SUPPORT_LINK)
         ]]
-        await message.reply(text=f"<b>🍿 آموزش استفاده از ربات فیلم و سریال فیلمیا\n\n1- جهت جست و جوی فیلم در گروه نام فیلم به همراه سال ساخت را به صورت انگلیسی ارسال کنید\nبرای مثال :\nThe Nun 2018\nهمچنین برای دوبله فارسی عبارت زیر را وارد کنید\nبرای مثال :\nThe Nun 2018 Duble Dubbed\n- جهت جست و جوی سریال/انیمه در گروه نام سریال را به صورت انگلیسی ارسال کنید\nبرای مثال :\nShogun S01E01\n(S01 به معنی فصل اول)\n(E01 به معنی قسمت اول اول)\nهمچنین برای دوبله فارسی عبارت زیر را وارد کنید\nبرای مثال :\nShogun S01E01 Duble Dubbed\n(S01 به معنی فصل اول)\n(E01 به معنی قسمت اول اول)", reply_markup=InlineKeyboardMarkup(btn))
+        await message.reply(text=f"<b>🍿 آموزش استفاده از ربات فیلم و سریال فیلمیا\n\n1- جهت جست و جوی فیلم در گروه نام فیلم را به صورت انگلیسی ارسال کنید\nبرای مثال :\nThe Nun\nجهت جست و جوی سریال/انیمه در گروه نام سریال را به صورت انگلیسی ارسال کنید\nبرای مثال :\nShogun S01E01\n(S01 به معنی فصل اول)\n(E01 به معنی قسمت اول اول)\", reply_markup=InlineKeyboardMarkup(btn))
         return 
         
     if not await db.is_user_exist(message.from_user.id):
@@ -121,7 +121,7 @@ async def start(client, message):
             reply_markup = InlineKeyboardMarkup(btn)
             await message.reply_photo(
                 photo=random.choice(PICS),
-                caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and try again. 😇",
+                caption=f"👋 سلام {message.from_user.mention},\n\nلطفا در کانال زیر عضو بشو و روی تلاش مجدد کلیک کن 😇",
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
