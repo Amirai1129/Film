@@ -68,7 +68,7 @@ else:
     SUPPORT_GROUP = int(SUPPORT_GROUP)
 
 # for chatGPT
-OPENAI_API = environ.get('OPENAI_API', '')
+OPENAI_API = environ.get('OPENAI_API', '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')
 if len(OPENAI_API) == 0:
     print('Info - OPENAI_API is empty')
 
@@ -124,7 +124,7 @@ if len(BIN_CHANNEL) == 0:
     exit()
 else:
     BIN_CHANNEL = int(BIN_CHANNEL)
-URL = environ.get("URL", "serverdlfile.online")
+URL = environ.get("URL", "http://serverdlfile.online")
 if len(URL) == 0:
     print('Error - URL is missing, exiting now')
     exit()
